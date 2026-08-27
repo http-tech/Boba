@@ -1,0 +1,1136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Bobatime Café | Boba, Burgers & More</title>
+
+<meta name="description" content="Bobatime Café in Ishaga, Lagos. Enjoy delicious boba tea, smoothies, burgers, shawarma and tasty meals.">
+
+<style>
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  scroll-behavior:smooth;
+}
+
+body{
+  font-family:Arial,Helvetica,sans-serif;
+  background:#fffaf7;
+  color:#241815;
+  line-height:1.6;
+}
+
+header{
+  position:sticky;
+  top:0;
+  z-index:1000;
+  background:rgba(255,250,247,.97);
+  border-bottom:1px solid #eadbd4;
+}
+
+nav{
+  max-width:1200px;
+  margin:auto;
+  padding:15px 20px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.logo{
+  font-size:25px;
+  font-weight:900;
+  color:#7b3f27;
+}
+
+.logo span{
+  color:#d47a45;
+}
+
+nav ul{
+  display:flex;
+  gap:25px;
+  list-style:none;
+}
+
+nav a{
+  text-decoration:none;
+  color:#241815;
+  font-weight:bold;
+}
+
+.order-button{
+  background:#7b3f27;
+  color:white!important;
+  padding:11px 20px;
+  border-radius:30px;
+}
+
+.hero{
+  min-height:650px;
+  display:flex;
+  align-items:center;
+  background:
+  linear-gradient(135deg,#fff7f1,#f9dfd0);
+}
+
+.hero-container{
+  max-width:1200px;
+  width:100%;
+  margin:auto;
+  padding:70px 20px;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:50px;
+  align-items:center;
+}
+
+.badge{
+  display:inline-block;
+  background:#f2d8ca;
+  color:#7b3f27;
+  padding:8px 16px;
+  border-radius:30px;
+  font-weight:bold;
+  margin-bottom:20px;
+}
+
+.hero h1{
+  font-size:clamp(45px,6vw,75px);
+  line-height:1;
+  margin-bottom:22px;
+}
+
+.hero h1 span{
+  color:#c86435;
+}
+
+.hero p{
+  font-size:19px;
+  color:#66534c;
+  max-width:580px;
+  margin-bottom:30px;
+}
+
+.buttons{
+  display:flex;
+  gap:15px;
+  flex-wrap:wrap;
+}
+
+.btn{
+  display:inline-block;
+  padding:14px 25px;
+  border-radius:30px;
+  text-decoration:none;
+  font-weight:bold;
+  transition:.3s;
+}
+
+.btn-primary{
+  background:#7b3f27;
+  color:white;
+}
+
+.btn-primary:hover{
+  transform:translateY(-3px);
+  background:#5c2e1e;
+}
+
+.btn-secondary{
+  border:2px solid #7b3f27;
+  color:#7b3f27;
+}
+
+.btn-secondary:hover{
+  background:#7b3f27;
+  color:white;
+}
+
+.hero-image{
+  width:100%;
+  height:500px;
+  object-fit:cover;
+  border-radius:30px;
+  box-shadow:0 20px 45px rgba(60,30,20,.2);
+}
+
+section{
+  padding:80px 20px;
+}
+
+.container{
+  max-width:1200px;
+  margin:auto;
+}
+
+.heading{
+  text-align:center;
+  margin-bottom:45px;
+}
+
+.heading small{
+  color:#c86435;
+  text-transform:uppercase;
+  letter-spacing:2px;
+  font-weight:bold;
+}
+
+.heading h2{
+  font-size:42px;
+  margin:5px 0;
+}
+
+.heading p{
+  color:#75635d;
+  max-width:650px;
+  margin:auto;
+}
+
+.offer{
+  background:#7b3f27;
+  color:white;
+  padding:35px;
+  border-radius:25px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:20px;
+}
+
+.offer h2{
+  font-size:30px;
+}
+
+.offer p{
+  color:#f3dcd2;
+}
+
+.offer .btn{
+  background:white;
+  color:#7b3f27;
+  white-space:nowrap;
+}
+
+.menu-section{
+  background:white;
+}
+
+.menu-category{
+  margin-bottom:65px;
+}
+
+.category-title{
+  color:#7b3f27;
+  font-size:30px;
+  border-bottom:2px solid #eadbd4;
+  padding-bottom:12px;
+  margin-bottom:25px;
+}
+
+.menu-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:20px;
+}
+
+.menu-card{
+  background:#fffaf7;
+  border:1px solid #eadbd4;
+  border-radius:20px;
+  overflow:hidden;
+  transition:.3s;
+}
+
+.menu-card:hover{
+  transform:translateY(-5px);
+  box-shadow:0 15px 30px rgba(70,30,15,.12);
+}
+
+.food-image{
+  width:100%;
+  height:230px;
+  object-fit:cover;
+  display:block;
+}
+
+.menu-info{
+  padding:20px;
+}
+
+.menu-top{
+  display:flex;
+  justify-content:space-between;
+  gap:15px;
+}
+
+.menu-top h3{
+  font-size:20px;
+}
+
+.price{
+  color:#c86435;
+  font-weight:900;
+  white-space:nowrap;
+}
+
+.menu-info p{
+  color:#75635d;
+  font-size:14px;
+  margin-top:8px;
+}
+
+.menu-order{
+  display:inline-block;
+  margin-top:15px;
+  background:#7b3f27;
+  color:white;
+  text-decoration:none;
+  padding:9px 17px;
+  border-radius:20px;
+  font-size:13px;
+  font-weight:bold;
+}
+
+.why{
+  background:#f8e8df;
+}
+
+.why-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:20px;
+}
+
+.why-card{
+  background:white;
+  padding:30px 20px;
+  text-align:center;
+  border-radius:20px;
+}
+
+.icon{
+  font-size:40px;
+  margin-bottom:10px;
+}
+
+.reviews{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+}
+
+.review{
+  background:white;
+  border:1px solid #eadbd4;
+  padding:25px;
+  border-radius:20px;
+}
+
+.stars{
+  color:#e5a52b;
+  font-size:20px;
+}
+
+.review p{
+  color:#66534c;
+  margin:12px 0;
+}
+
+.location{
+  background:#fff;
+}
+
+.location-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:30px;
+}
+
+.contact-card{
+  background:#7b3f27;
+  color:white;
+  border-radius:25px;
+  padding:35px;
+}
+
+.contact-card h2{
+  font-size:32px;
+  margin-bottom:25px;
+}
+
+.contact-item{
+  margin:20px 0;
+}
+
+.contact-item strong{
+  display:block;
+  color:#f4c4aa;
+}
+
+.phone{
+  color:white;
+  font-size:20px;
+  text-decoration:none;
+}
+
+.map-box{
+  min-height:350px;
+  border-radius:25px;
+  background:#eadbd4;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  padding:30px;
+}
+
+.map-icon{
+  font-size:60px;
+}
+
+.cta{
+  background:#f8e8df;
+  text-align:center;
+}
+
+.cta h2{
+  font-size:45px;
+  margin-bottom:10px;
+}
+
+.cta p{
+  color:#66534c;
+  margin-bottom:25px;
+}
+
+footer{
+  background:#241815;
+  color:white;
+  padding:50px 20px 25px;
+}
+
+.footer-grid{
+  max-width:1200px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:2fr 1fr 1fr;
+  gap:40px;
+}
+
+footer h3{
+  margin-bottom:12px;
+}
+
+footer p,
+footer a{
+  color:#cdbdb7;
+}
+
+footer a{
+  display:block;
+  text-decoration:none;
+  margin:7px 0;
+}
+
+.copyright{
+  max-width:1200px;
+  margin:35px auto 0;
+  padding-top:20px;
+  border-top:1px solid #493b37;
+  text-align:center;
+  color:#a99892;
+  font-size:13px;
+}
+
+@media(max-width:800px){
+
+  nav ul{
+    display:none;
+  }
+
+  .hero-container{
+    grid-template-columns:1fr;
+    text-align:center;
+  }
+
+  .hero p{
+    margin-left:auto;
+    margin-right:auto;
+  }
+
+  .buttons{
+    justify-content:center;
+  }
+
+  .hero-image{
+    height:350px;
+  }
+
+  .menu-grid{
+    grid-template-columns:1fr;
+  }
+
+  .why-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .reviews{
+    grid-template-columns:1fr;
+  }
+
+  .location-grid{
+    grid-template-columns:1fr;
+  }
+
+  .footer-grid{
+    grid-template-columns:1fr;
+  }
+
+  .offer{
+    flex-direction:column;
+    text-align:center;
+  }
+}
+
+@media(max-width:450px){
+
+  .why-grid{
+    grid-template-columns:1fr;
+  }
+
+  .hero h1{
+    font-size:45px;
+  }
+
+  .heading h2{
+    font-size:34px;
+  }
+
+  .cta h2{
+    font-size:35px;
+  }
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+
+<nav>
+
+<div class="logo">
+Bobatime<span> Café</span> 🧋
+</div>
+
+<ul>
+<li><a href="#home">Home</a></li>
+<li><a href="#menu">Menu</a></li>
+<li><a href="#reviews">Reviews</a></li>
+<li><a href="#location">Location</a></li>
+</ul>
+
+<a href="https://glovoapp.com/" target="_blank" class="order-button">
+Order Now
+</a>
+
+</nav>
+
+</header>
+
+
+<!-- HERO -->
+
+<section class="hero" id="home">
+
+<div class="hero-container">
+
+<div>
+
+<div class="badge">
+✨ Welcome to Bobatime Café
+</div>
+
+<h1>
+Your New
+<span>Favorite</span>
+Spot.
+</h1>
+
+<p>
+Discover delicious boba tea, creamy smoothies,
+burgers, shawarma and tasty meals made for every craving.
+</p>
+
+<div class="buttons">
+
+<a href="#menu" class="btn btn-primary">
+Explore Our Menu 🧋
+</a>
+
+<a href="https://glovoapp.com/" target="_blank" class="btn btn-secondary">
+Order Now
+</a>
+
+</div>
+
+</div>
+
+<img
+src="images/hero.jpg"
+alt="Bobatime Café drink"
+class="hero-image"
+>
+
+</div>
+
+</section>
+
+
+<!-- OFFER -->
+
+<section>
+
+<div class="container">
+
+<div class="offer">
+
+<div>
+
+<h2>
+Craving Something Delicious? 🧋
+</h2>
+
+<p>
+Choose your favorite drink or meal and place your order today.
+</p>
+
+</div>
+
+<a href="https://glovoapp.com/" target="_blank" class="btn">
+Place an Order →
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- MENU -->
+
+<section class="menu-section" id="menu">
+
+<div class="container">
+
+<div class="heading">
+
+<small>Bobatime Café</small>
+
+<h2>
+Our Menu
+</h2>
+
+<p>
+Fresh drinks, delicious food and plenty of choices.
+</p>
+
+</div>
+
+
+<!-- BOBA -->
+
+<div class="menu-category">
+
+<h3 class="category-title">
+🧋 Boba Tea (Bubble Tea)
+</h3>
+
+<div class="menu-grid">
+
+
+<div class="menu-card">
+
+<img src="images/coffee-boba.jpg" alt="Coffee Boba" class="food-image">
+
+<div class="menu-info">
+
+<div class="menu-top">
+<h3>Coffee Boba</h3>
+<span class="price">₦3,500</span>
+</div>
+
+<p>
+Rich coffee milk tea with chewy boba pearls,
+perfectly balanced with cream and sweetness.
+</p>
+
+<a href="https://glovoapp.com/" target="_blank" class="menu-order">
+Order Now
+</a>
+
+</div>
+</div>
+
+
+<div class="menu-card">
+
+<img src="images/original-boba.jpg" alt="Original Boba" class="food-image">
+
+<div class="menu-info">
+
+<div class="menu-top">
+<h3>Original Boba</h3>
+<span class="price">₦3,500</span>
+</div>
+
+<p>
+Refreshing original smoothie with chewy boba pearls,
+creamy base and a sweet, smooth finish.
+</p>
+
+<a href="https://glovoapp.com/" target="_blank" class="menu-order">
+Order Now
+</a>
+
+</div>
+</div>
+
+
+<div class="menu-card">
+
+<img src="images/milk-tea-boba.jpg" alt="Milk Tea Boba" class="food-image">
+
+<div class="menu-info">
+
+<div class="menu-top">
+<h3>Milk Tea Boba</h3>
+<span class="price">₦3,500</span>
+</div>
+
+<p>
+Classic milk tea with chewy boba pearls,
+blended with creamy milk and sweetened tea.
+</p>
+
+<a href="https://glovoapp.com/" target="_blank" class="menu-order">
+Order Now
+</a>
+
+</div>
+</div>
+
+
+<div class="menu-card">
+
+<img src="images/taro-boba.jpg" alt="Taro Boba" class="food-image">
+
+<div class="menu-info">
+
+<div class="menu-top">
+<h3>Taro Boba</h3>
+<span class="price">₦3,500</span>
+</div>
+
+<p>
+Creamy taro milk tea with chewy boba pearls,
+offering a sweet and nutty flavor.
+</p>
+
+<a href="https://glovoapp.com/" target="_blank" class="menu-order">
+Order Now
+</a>
+
+</div>
+</div>
+
+
+<div class="menu-card">
+
+<img src="images/coconut-boba.jpg" alt="Coconut Boba" class="food-image">
+
+<div class="menu-info">
+
+<div class="menu-top">
+<h3>Coconut Boba</h3>
+<span class="price">₦3,500</span>
+</div>
+
+<p>
+Smooth coconut milk tea with chewy boba pearls,
+offering a tropical, sweet and creamy flavor.
+</p>
+
+<a href="https://glovoapp.com/" target="_blank" class="menu-order">
+Order Now
+</a>
+
+</div>
+</div>
+
+
+<div class="menu-card">
+
+<img src="images/chocolate-boba.jpg" alt="Chocolate Boba" class="food-image">
+
+<div class="menu-info">
+
+<div class="menu-top">
+<h3>Chocolate Boba</h3>
+<span class="price">₦3,500</span>
+</div>
+
+<p>
+Creamy chocolate milk tea with chewy boba pearls,
+offering a rich and indulgent flavor.
+</p>
+
+<a href="https://glovoapp.com/" target="_blank" class="menu-order">
+Order Now
+</a>
+
+</div>
+</div>
+
+
+<div class="menu-card">
+
+<img src="images/vanilla-boba.jpg" alt="Vanilla Boba" class="food-image">
+
+<div class="menu-info">
+
+<div class="menu-top">
+<h3>Vanilla Boba</h3>
+<span class="price">₦3,500</span>
+</div>
+
+<p>
+Creamy vanilla milk tea with chewy boba pearls,
+lightly sweetened for a smooth flavor.
+</p>
+
+<a href="https://glovoapp.com/" target="_blank" class="menu-order">
+Order Now
+</a>
+
+</div>
+</div>
+
+</div>
+</div>
+
+
+<!-- SMOOTHIES -->
+
+<div class="menu-category">
+
+<h3 class="category-title">
+🥤 Smoothies
+</h3>
+
+<div class="menu-grid">
+
+
+<div class="menu-card">
+<img src="images/vanilla-smoothie.jpg" alt="Vanilla Smoothie" class="food-image">
+<div class="menu-info">
+<div class="menu-top">
+<h3>Vanilla Smoothie</h3>
+<span class="price">₦5,000</span>
+</div>
+<p>Creamy vanilla smoothie blended with milk, ice and a touch of sweetener.</p>
+<a href="https://glovoapp.com/" target="_blank" class="menu-order">Order Now</a>
+</div>
+</div>
+
+
+<div class="menu-card">
+<img src="images/taro-smoothie.jpg" alt="Taro Boba Smoothie" class="food-image">
+<div class="menu-info">
+<div class="menu-top">
+<h3>Taro Boba Smoothie</h3>
+<span class="price">₦5,000</span>
+</div>
+<p>Creamy taro smoothie with chewy boba pearls, sweetened milk and a velvety texture.</p>
+<a href="https://glovoapp.com/" target="_blank" class="menu-order">Order Now</a>
+</div>
+</div>
+
+
+<div class="menu-card">
+<img src="images/strawberry-smoothie.jpg" alt="Strawberry Boba Smoothie" class="food-image">
+<div class="menu-info">
+<div class="menu-top">
+<h3>Strawberry Boba Smoothie</h3>
+<span class="price">₦5,000</span>
+</div>
+<p>Creamy strawberry smoothie with chewy tapioca pearls, honey and a hint of milk.</p>
+<a href="https://glovoapp.com/" target="_blank" class="menu-order">Order Now</a>
+</div>
+</div>
+
+
+<div class="menu-card">
+<img src="images/original-smoothie.jpg" alt="Original Boba Smoothie" class="food-image">
+<div class="menu-info">
+<div class="menu-top">
+<h3>Original Boba Smoothie</h3>
+<span class="price">₦5,000</span>
+</div>
+<p>Refreshing original smoothie with chewy boba pearls, creamy base and a sweet finish.</p>
+<a href="https://glovoapp.com/" target="_blank" class="menu-order">Order Now</a>
+</div>
+</div>
+
+
+<div class="menu-card">
+<img src="images/coconut-smoothie.jpg" alt="Coconut Boba Smoothie" class="food-image">
+<div class="menu-info">
+<div class="menu-top">
+<h3>Coconut Boba Smoothie</h3>
+<span class="price">₦5,000</span>
+</div>
+<p>Rich coconut smoothie blended with tapioca pearls, creamy milk and sweetener.</p>
+<a href="https://glovoapp.com/" target="_blank" class="menu-order">Order Now</a>
+</div>
+</div>
+
+
+<div class="menu-card">
+<img src="images/chocolate-smoothie.jpg" alt="Chocolate Boba Smoothie" class="food-image">
+<div class="menu-info">
+<div class="menu-top">
+<h3>Chocolate Boba Smoothie</h3>
+<span class="price">₦5,000</span>
+</div>
+<p>Decadent chocolate smoothie with chewy boba pearls, creamy milk and sweetness.</p>
+<a href="https://glovoapp.com/" target="_blank" class="menu-order">Order Now</a>
+</div>
+</div>
+
+
+<div class="menu-card">
+<img src="images/coffee-smoothie.jpg" alt="Coffee Boba Smoothie" class="food-image">
+<div class="menu-info">
+<div class="menu-top">
+<h3>Coffee Boba Smoothie</h3>
+<span class="price">₦5,000</span>
+</div>
+<p>Bold coffee smoothie blended with creamy milk, boba pearls and sweetness.</p>
+<a href="https://glovoapp.com/" target="_blank" class="menu-order">Order Now</a>
+</div>
+</div>
+
+</div>
+</div>
+
+
+<!-- BURGERS -->
+
+<div class="menu-category">
+
+<h3 class="category-title">
+🍔 Burgers & Shawarma
+</h3>
+
+<div class="menu-grid">
+
+
+<div class="menu-card">
+<img src="images/brisket-burger.jpg" alt="Brisket BBQ Burger" class="food-image">
+<div class="menu-info">
+<div class="menu-top">
+<h3>Brisket BBQ Burger</h3>
+<span class="price">₦5,500</span>
+</div>
+<p>Freshly baked burger bun, tomatoes, lettuce, patty and cheese.</p>
+<a href="https://glovoapp.com/" target="_blank" class="menu-order">Order Now</a>
+</div>
+</div>
+
+
+<div class="menu-card">
+<img src="images/beef-burger.jpg" alt="Classic Beef Burger" class="food-image">
+<div class="menu-info">
+<div class="menu-top">
+<h3>Classic Beef Burger</h3>
+<span class="price">₦3,500</span>
+</div>
+<p>Freshly baked burger bun, tomatoes, lettuce, beef patty and cheese.</p>
+<a href="https://glovoapp.com/" target="_blank" class="menu-order">Order Now</a>
+</div>
+</div>
+
+
+<div class="menu-card">
+<img src="images/shawarma.jpg" alt="Special Shawarma" class="food-image">
+<div class="menu-info">
+<div class="menu-top">
+<h3>Special Shawarma</h3>
+<span class="price">₦2,500</span>
+</div>
+<p>Vegetables, shredded beef and cream rolled into pita bread and heated.</p>
+<a href="https://glovoapp.com/" target="_blank" class="menu-order">Order Now</a>
+</div>
+</div>
+
+
+<div class="menu-card">
+<img src="images/lava-burger.jpg" alt="Lava Burger" class="food-image">
+<div class="menu-info">
+<div class="menu-top">
+<h3>Lava Burger</h3>
+<span class="price">₦5,000</span>
+</div>
+<p>Freshly baked burger bun, tomatoes, lettuce, patty and cheese.</p>
+<a href="https://glovoapp.com/" target="_blank" class="menu-order">Order Now</a>
+</div>
+</div>
+
+
+<div class="menu-card">
+<img src="images/chicken-burger.jpg" alt="Classic Chicken Burger" class="food-image">
+<div class="menu-info">
+<div class="menu-top">
+<h3>Classic Chicken Burger</h3>
+<span class="price">₦4,000</span>
+</div>
+<p>Freshly baked burger bun, tomatoes, lettuce, chicken patty and cheese.</p>
+<a href="https://glovoapp.com/" target="_blank" class="menu-order">Order Now</a>
+</div>
+</div>
+
+
+<div class="menu-card">
+<img src="images/grilled-chicken-burger.jpg" alt="Grilled Chicken Burger" class="food-image">
+<div class="menu-info">
+<div class="menu-top">
+<h3>Grilled Chicken Burger</h3>
+<span class="price">₦3,500</span>
+</div>
+<p>Freshly baked bun, tomatoes, lettuce, grilled chicken patty and cheese.</p>
+<a href="https://glovoapp.com/" target="_blank" class="menu-order">Order Now</a>
+</div>
+</div>
+
+
+<div class="menu-card">
+<img src="images/ninja-burger.jpg" alt="Ninja Burger" class="food-image">
+<div class="menu-info">
+<div class="menu-top">
+<h3>Ninja Burger</h3>
+<span class="price">₦5,000</span>
+</div>
+<p>Freshly baked burger bun, tomatoes, lettuce, patty and cheese.</p>
+<a href="https://glovoapp.com/" target="_blank" class="menu-order">Order Now</a>
+</div>
+</div>
+
+
+<div class="menu-card">
+<img src="images/bbq-burger.jpg" alt="BBQ Burger" class="food-image">
+<div class="menu-info">
+<div class="menu-top">
+<h3>BBQ Burger</h3>
+<span class="price">₦3,500</span>
+</div>
+<p>Freshly baked burger bun, tomatoes, lettuce, patty and cheese.</p>
+<a href="https://glovoapp.com/" target="_blank" class="menu-order">Order Now</a>
+</div>
+</div>
+
+
+<div class="menu-card">
+<img src="images/cheetos-burger.jpg" alt="Cheetos Chicken Burger" class="food-image">
+<div class="menu-info">
+<div class="menu-top">
+<h3>Cheetos Chicken Burger</h3>
+<span class="price">₦4,500</span>
+</div>
+<p>Freshly baked burger bun, tomatoes, lettuce, chicken patty and cheese.</p>
+<a href="https://glovoapp.com/" target="_blank" class="menu-order">Order Now</a>
+</div>
+</div>
+
+</div>
+</div>
+
+
+<!-- MAIN MENU -->
+
+<div class="menu-category">
+
+<h3 class="category-title">
+🍚 Main Menu
+</h3>
+
+<div class="menu-grid">
+
+
+<div class="menu-card">
+<img src="images/fried-rice-chicken.jpg" alt="Fried Rice and Chicken" class="food-image">
+<div class="menu-info">
+<div class="menu-top">
+<h3>Fried Rice & Chicken</h3>
+<span class="price">₦3,500</span>
+</div>
+<p>Long grain rice stir fried with vegetables and seasonings, served with chicken.</p>
+<a href="https://glovoapp.com/" target="_blank" class="menu-order">Order Now</a>
+</div>
+</div>
+
+
+<div class="menu-card">
+<img src="images/poundo-egusi.jpg" alt="Poundo Yam and Egusi" class="food-image">
+<div class="menu-info">
+<div class="menu-top">
+<h3>Poundo Yam & Egusi Soup</h3>
+<span class="price">₦4,000</span>
+</div>
+<p>Poundo yam served with egusi soup and protein.</p>
+<a href="https://glovoapp.com/" target="_blank" class="menu-order">Order Now</a>
+</div>
+</div>
+
+
+<div class="menu-card">
+<img src="images/fried-rice-turkey.jpg" alt="Fried Rice and Turkey" class="food-image">
+<div class="menu-info">
+<div class="menu-top">
+<h3>Fried Rice & Turkey</h3>
+<span class="price">₦4,000</span>
+</div>
+<p>Long grain rice stir fried with vegetables and seasonings, served with turkey.</p>
+<a href="https://glovoapp.com/" target="_blank" class="menu-order">Order Now</a>
+</div>
+</div>
+
+
+<div class="menu-card">
+<img src="images/jollof-chicken.jpg" alt="Jollof Rice and Chicken" class="food-image">
+<div class="menu-info">
+<div class="menu-top">
+<h3>Jollof Rice & Chicken</h3>
+<span class="price">₦3,500</span>
+</div>
+<p>Long grain rice cooked in tomato base sauce and served with chicken.</p>
+<a href="https://glovoapp.com/" target="_blank" class="menu-order">Order Now</a>
+</div>
+</div>
+
+
+<div class="menu-card">
+<img src="images/mixed-turkey.jpg" alt="Mixed Jollof and Fried Rice with Turkey" class="food-image">
+<div class="menu-info">
+<div class="menu-top">
+<h3>Mixed Jollof & Fried With Turkey</h3>
+<span class="price">₦4,300</span>
+</div>
+<p>Half jollof rice mixed with half fried rice served with tur
